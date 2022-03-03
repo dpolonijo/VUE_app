@@ -1,6 +1,9 @@
 <template>
   <Header />
   <NavSidebar />
+  <div class="content">
+    <router-view></router-view>
+  </div>
 </template>
 
 <!-- ######################################################## -->
@@ -21,5 +24,8 @@
 <!-- ######################################################## -->
 
 <style>
-
+  .content {
+    /* Shift content left by amount of navigation width */
+    margin-left: 200px;
+  }
 </style>

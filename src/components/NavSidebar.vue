@@ -1,8 +1,9 @@
 <template>
+<!-- <router-view></router-view> -->
     <ul class="nav">
-        <li><a href="#">Users</a></li>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Admin only</a></li>
+        <li><router-link to="/users">Users</router-link></li>
+        <li><router-link to="/about">About me</router-link></li>
+        <li><router-link to="/admin">Admin only</router-link></li>
     </ul>
 </template>
 
@@ -39,5 +40,10 @@ export default {
     .nav li a:hover {
         background: #ccc;
         color: #686868;
+    }
+
+    .active-link {
+        background: #ccc !important;
+        color: #686868 !important;
     }
 </style>
