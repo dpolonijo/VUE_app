@@ -1,31 +1,33 @@
 <template>
-  <Header />
-  <NavSidebar />
-  <div class="content">
-    <router-view></router-view>
-  </div>
+    <Header />
+    <NavSidebar />
+    <div class="content">
+        <router-view></router-view>
+    </div>
 </template>
 
 <!-- ######################################################## -->
 
 <script>
-  import Header from './components/Header';
-  import NavSidebar from './components/NavSidebar';
+import Header from './components/Header';
+import NavSidebar from './components/NavSidebar';
 
-  export default {
+export default {
     name: 'App',
     components: {
-      Header,
-      NavSidebar
-    }
-  }
+        Header,
+        NavSidebar,
+    },
+};
 </script>
 
 <!-- ######################################################## -->
 
 <style>
-  .content {
-    /* Shift content left by amount of navigation width */
-    margin-left: 200px;
-  }
+.content {
+    margin: 15px 15px 15px 215px;
+    padding: 15px;
+    border: solid 1px #999;
+    /* background: #ccc; */
+}
 </style>
