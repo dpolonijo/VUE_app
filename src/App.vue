@@ -26,8 +26,5 @@ export default {
 <style>
 .content {
     margin: 15px 15px 15px 215px;
-    /* padding: 15px;
-    border: solid 1px #999; */
-    /* background: #ccc; */
 }
 </style>

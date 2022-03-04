@@ -64,6 +64,11 @@ export default {
             let email = this.loggedUserData.email;
             if (email.slice(email.length - 4) === '.net') {
                 this.isUserPrivileged = true;
+                // Save privileged user to local storage
+                localStorage.setItem(
+                    'user',
+                    JSON.stringify(this.loggedUserData)
+                );
             } else {
                 this.isUserPrivileged = false;
             }
