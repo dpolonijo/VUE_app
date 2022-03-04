@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: "Header",
+    name: 'Header',
 };
 </script>
 
@@ -23,7 +23,7 @@ header {
 .username {
     width: 150px;
     height: 60px;
-    background: #d54b30;
+    background: #f55937;
     display: flex;
     align-items: center;
     justify-content: center;

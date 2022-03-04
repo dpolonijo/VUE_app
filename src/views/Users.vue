@@ -1,6 +1,26 @@
 <template>
     <!-- <scale-loader v-if="loading" :color="loaderColor"></scale-loader> -->
-    <div v-if="!loading">Grid</div>
+    <!-- <div v-if="!loading">Grid</div> -->
+    <table class="user-tbl">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                v-for="(user, index) in this.users"
+                :key="user.id"
+                @dblclick="rowDblClick(index)"
+            >
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
@@ -17,6 +37,8 @@ export default {
             users: [],
             loaderColor: '#CD4929',
             loading: true,
+            loggedUserData: [],
+            isUserPrivileged: false,
         };
     },
     methods: {
@@ -35,6 +57,19 @@ export default {
                     console.log(error);
                 });
         },
+        rowDblClick(index) {
+            this.loggedUserData = this.users[index];
+
+            // Is user privileged?
+            let email = this.loggedUserData.email;
+            if (email.slice(email.length - 4) === '.net') {
+                this.isUserPrivileged = true;
+            } else {
+                this.isUserPrivileged = false;
+            }
+
+            console.log('Is user privileged - ', this.isUserPrivileged);
+        },
     },
     mounted() {
         this.getUsers();
@@ -43,9 +78,45 @@ export default {
 </script>
 
 <style>
+.content {
+    padding: 0;
+    border: 0;
+}
 .v-scale {
     /* Loader size */
     height: 100px !important;
     width: 10px !important;
+}
+
+/* Table */
+
+.user-tbl {
+    border-collapse: collapse;
+    width: 100%;
+    border: solid 1px #ccc;
+}
+
+.user-tbl thead th,
+.user-tbl tbody tr td {
+    padding: 10px 5px;
+    text-align: left;
+    width: 33%;
+    padding: 15px 15px;
+}
+
+.user-tbl thead th {
+    font-size: 14px;
+    background: #2e2e2e;
+    color: #ccc;
+}
+
+.user-tbl tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-tbl tbody tr:hover {
+    background: rgb(224, 223, 223);
+    /* color: #fff; */
+    cursor: pointer;
 }
 </style>

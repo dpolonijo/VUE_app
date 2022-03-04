@@ -26,7 +26,7 @@ ul.nav {
 
 .nav li a {
     display: block;
-    width: 200px;
+    width: 170px;
     background: #686868;
     text-decoration: none;
     border-bottom: solid 1px #ccc;
