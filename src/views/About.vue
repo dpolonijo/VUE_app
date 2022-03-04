@@ -105,8 +105,9 @@ export default {
 
 .about-left,
 .about-right {
-    background: #ccc;
+    background: #e5dddc;
     min-height: 500px;
+    border: solid 1px #a09f9f;
 }
 
 .about-left {
