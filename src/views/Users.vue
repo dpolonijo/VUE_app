@@ -41,6 +41,9 @@ export default {
             isUserPrivileged: false,
         };
     },
+    mounted() {
+        this.getUsers();
+    },
     methods: {
         getUsers() {
             axios
@@ -75,9 +78,6 @@ export default {
 
             console.log('Is user privileged - ', this.isUserPrivileged);
         },
-    },
-    mounted() {
-        this.getUsers();
     },
 };
 </script>
