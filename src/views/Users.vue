@@ -27,6 +27,8 @@
     </div>
 </template>
 
+<!-- ######################################################## -->
+
 <script>
 import axios from 'axios';
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue';
@@ -83,12 +85,12 @@ export default {
                 // Not .net domain
                 this.isUserPrivileged = false;
             }
-
-            console.log('Is user privileged - ', this.isUserPrivileged);
         },
     },
 };
 </script>
+
+<!-- ######################################################## -->
 
 <style>
 .content {
@@ -106,7 +108,8 @@ export default {
 .user-tbl {
     border-collapse: collapse;
     width: 100%;
-    border: solid 1px #ccc;
+    background: #e4e4e4;
+    border: solid 1px #453e39;
 }
 
 .user-tbl thead th,
@@ -119,10 +122,8 @@ export default {
 
 .user-tbl thead th {
     font-size: 14px;
-    /* background: #2e2e2e;
-    color: #ccc; */
-    background: #d6cdcb;
-    color: #584539;
+    background: linear-gradient(#3e3c3c, #4b4b4b);
+    color: #e3dad4;
 }
 
 .user-tbl tbody tr:nth-child(even) {
@@ -130,9 +131,9 @@ export default {
 }
 
 .user-tbl tbody tr:hover {
-    background: rgb(224, 223, 223);
-    /* color: #fff; */
+    background: linear-gradient(#a2a2a2, #959595);
     cursor: pointer;
+    color: #ffffff;
 }
 
 .loader-wrap {

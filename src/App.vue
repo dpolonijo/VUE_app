@@ -27,11 +27,9 @@ export default {
     methods: {
         loginEvent(loginState) {
             this.isLoggedIn = loginState;
-            // console.log('xxx - ', this.isLoggedIn);
         },
         loginState(state) {
             this.loginStatus = state;
-            // console.log('App state - ', state);
         },
     },
 };

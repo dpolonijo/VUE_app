@@ -10,6 +10,8 @@
     </header>
 </template>
 
+<!-- ######################################################## -->
+
 <script>
 import Swal from 'sweetalert2';
 import router from '../router';
@@ -32,8 +34,8 @@ export default {
         // Initial page load or page refresh
         logIn() {
             let userLS = JSON.parse(localStorage.getItem('user'));
-            // console.log('ls - ', userLS);
             if (userLS) {
+                this.$emit('loginState', true);
                 this.username = userLS.name;
                 this.loginState = true;
             }
@@ -87,6 +89,8 @@ export default {
 };
 </script>
 
+<!-- ######################################################## -->
+
 <style>
 header {
     height: 80px;
@@ -101,7 +105,7 @@ header {
 }
 
 .username {
-    background: #f55937;
+    background: linear-gradient(#eb5830, #d24c28);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,14 +114,13 @@ header {
     font-weight: bold;
     padding: 0 15px;
     height: 55px;
-    margin-right: 33px;
+    margin-right: 32px;
 }
 
 .log-out {
     margin-left: 15px;
     border: solid 1px #000;
     padding: 5px;
-    /* background: #f67f55; */
 }
 
 .log-out:hover {
@@ -127,9 +130,14 @@ header {
 
 .swal2-popup {
     margin-left: 120px;
+    background: linear-gradient(#fefefe, #f00);
 }
 
 .swal2-popup .swal2-styled:focus {
     box-shadow: none !important;
+}
+
+.swal2-popup.swal2-modal.swal2-show {
+    background: linear-gradient(#fefefe, #d3d2d1);
 }
 </style>

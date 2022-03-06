@@ -11,7 +11,12 @@
         <div class="about-right">
             <table class="about-tbl">
                 <tr class="header-row">
-                    <td><h2>About me</h2></td>
+                    <td>
+                        <h2>
+                            <i class="fa fa-user" aria-hidden="true"></i>About
+                            me
+                        </h2>
+                    </td>
                     <td></td>
                 </tr>
                 <tr class="separator">
@@ -34,7 +39,12 @@
                 <!--  -->
 
                 <tr class="header-row">
-                    <td><h2>Address</h2></td>
+                    <td>
+                        <h2>
+                            <i class="fa fa-address-book" aria-hidden="true"></i
+                            >Address
+                        </h2>
+                    </td>
                     <td></td>
                 </tr>
                 <tr class="separator">
@@ -57,7 +67,12 @@
                 <!--  -->
 
                 <tr class="header-row">
-                    <td><h2>Company</h2></td>
+                    <td>
+                        <h2>
+                            <i class="fa fa-suitcase" aria-hidden="true"></i
+                            >Company
+                        </h2>
+                    </td>
                     <td></td>
                 </tr>
                 <tr class="separator">
@@ -72,6 +87,8 @@
         </div>
     </div>
 </template>
+
+<!-- ######################################################## -->
 
 <script>
 export default {
@@ -91,7 +108,6 @@ export default {
         getUserDetails() {
             if (localStorage.getItem('user')) {
                 this.user = JSON.parse(localStorage.getItem('user'));
-                console.log('User data from LS - ', this.user);
                 this.address = this.user.address;
                 this.company = this.user.company;
             }
@@ -99,6 +115,8 @@ export default {
     },
 };
 </script>
+
+<!-- ######################################################## -->
 
 <style>
 .about-wrap {
@@ -108,9 +126,10 @@ export default {
 
 .about-left,
 .about-right {
-    background: #e5dddc;
     min-height: 500px;
-    border: solid 1px #a09f9f;
+    border: solid 1px #453e39;
+    color: #453e39;
+    background: linear-gradient(#fefefe, #e0dedc);
 }
 
 .about-left {
@@ -147,7 +166,7 @@ export default {
 }
 
 .about-tbl .header-row td {
-    border-bottom: solid 1px #333;
+    border-bottom: solid 1px #cacaca;
 }
 
 .about-tbl .header-row td:not(.about-tbl .header-row:first-child td) {
@@ -165,6 +184,10 @@ export default {
 
 .about-tbl h2 {
     margin-left: 0;
+}
+
+.about-right h2 svg {
+    padding-right: 10px;
 }
 
 /* Responsive layout */

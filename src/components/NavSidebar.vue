@@ -12,6 +12,8 @@
     </ul>
 </template>
 
+<!-- ######################################################## -->
+
 <script>
 export default {
     name: 'NavSidebar',
@@ -20,6 +22,8 @@ export default {
     },
 };
 </script>
+
+<!-- ######################################################## -->
 
 <style>
 ul.nav {
@@ -37,21 +41,21 @@ ul.nav {
 .nav li a {
     display: block;
     width: 170px;
-    background: #686868;
+    background: linear-gradient(#686868, #5e5e5e);
     text-decoration: none;
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px #5d5d5d;
     font-size: 22px;
     padding: 12px 15px;
     color: #ccc;
 }
 
 .nav li a:hover {
-    background: #ccc;
+    background: #e7e1db;
     color: #686868;
 }
 
 .nav .active-link {
-    background: #ccc !important;
+    background: #e7e1db !important;
     color: #686868 !important;
 }
 
