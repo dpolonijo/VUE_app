@@ -13,7 +13,6 @@
 <script>
 import Swal from 'sweetalert2';
 import router from '../router';
-import { watch, ref, defineComponent } from 'vue';
 
 export default {
     name: 'Header',
@@ -60,11 +59,27 @@ export default {
     },
     watch: {
         // Update username of just logged user
-        isLoggedIn(newVal, oldVal) {
-            // console.log('new - ', newVal);
+        isLoggedIn(newVal) {
+            // Emit global login status through parent component (App.vue) to NavSidebar
             this.$emit('loginState', newVal);
             if (newVal) {
                 this.logIn();
+            }
+        },
+        // Restrict route if user not logged in
+        $route(to) {
+            if (
+                (to.name === 'About' || to.name === 'Admin') &&
+                !this.isLoggedIn
+            ) {
+                // Redirect
+                router.replace('/');
+                // Show message
+                Swal.fire({
+                    title: 'URL restricted',
+                    text: 'You must login to access this page!',
+                    confirmButtonColor: '#F55937',
+                });
             }
         },
     },

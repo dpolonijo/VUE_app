@@ -18,11 +18,6 @@ export default {
     props: {
         loginStatus: Boolean,
     },
-    watch: {
-        loginStatus(newVal) {
-            // console.log('Navbar login - ', newVal);
-        },
-    },
 };
 </script>
 

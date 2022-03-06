@@ -89,10 +89,12 @@ export default {
     emits: ['loginEvent'],
     methods: {
         getUserDetails() {
-            this.user = JSON.parse(localStorage.getItem('user'));
-            console.log('User data from LS - ', this.user);
-            this.address = this.user.address;
-            this.company = this.user.company;
+            if (localStorage.getItem('user')) {
+                this.user = JSON.parse(localStorage.getItem('user'));
+                console.log('User data from LS - ', this.user);
+                this.address = this.user.address;
+                this.company = this.user.company;
+            }
         },
     },
 };
