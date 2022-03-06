@@ -1,7 +1,5 @@
 <template>
-    <!-- <scale-loader v-if="loading" :color="loaderColor"></scale-loader> -->
-    <!-- <div v-if="!loading">Grid</div> -->
-    <table class="user-tbl">
+    <table v-if="!loading" class="user-tbl">
         <thead>
             <tr>
                 <th>Name</th>
@@ -21,6 +19,12 @@
             </tr>
         </tbody>
     </table>
+
+    <div v-if="loading" class="loader-wrap">
+        <h1>Loading</h1>
+        <scale-loader :color="loaderColor"></scale-loader>
+        <h2>Please wait...</h2>
+    </div>
 </template>
 
 <script>
@@ -35,7 +39,7 @@ export default {
     data() {
         return {
             users: [],
-            loaderColor: '#CD4929',
+            loaderColor: '#F55A37',
             loading: true,
             loggedUserData: [],
             isUserPrivileged: false,
@@ -49,8 +53,8 @@ export default {
         getUsers() {
             axios
                 .get(
-                    // 'https://run.mocky.io/v3/efcaa20a-6049-4dc0-9d28-6ece8529dac0?mocky-delay=2000ms'
-                    'https://run.mocky.io/v3/efcaa20a-6049-4dc0-9d28-6ece8529dac0'
+                    'https://run.mocky.io/v3/efcaa20a-6049-4dc0-9d28-6ece8529dac0?mocky-delay=10000ms'
+                    // 'https://run.mocky.io/v3/efcaa20a-6049-4dc0-9d28-6ece8529dac0'
                 )
                 .then((response) => {
                     console.log('Users - ', response.data);
@@ -129,5 +133,10 @@ export default {
     background: rgb(224, 223, 223);
     /* color: #fff; */
     cursor: pointer;
+}
+
+.loader-wrap {
+    text-align: center;
+    margin-right: 120px;
 }
 </style>
