@@ -29,7 +29,7 @@ vue-sweetalert2: 5.0.2
 ## Opće informacije i upute za korištenje
 
 - Početna stranica prikazuje popis korisnika koji se dohvaćaju putem MOCK API servisa.
-- Stranica se učitava s odmakom od 10 sekundi što simulira sporu vezue ili učitavanje velike količine podataka.
+- Stranica se učitava s odmakom od 10 sekundi što simulira sporu vezu ili učitavanje velike količine podataka.
 - Za vrijeme učitavanja, korisniku se na početnoj stranici prikazuje animacija s prikladnom porukom.
 - Gornji desni dio ekrana naznačava da korisnik inicijalno nije prijavljen.
 - Prijava korisnika vrši se duplim klikom zapisa u tablici korisnika (Users). Uspješno će se prijaviti samo korisnik čija email adresa sadrži .net domenu.
