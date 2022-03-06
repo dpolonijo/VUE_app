@@ -31,6 +31,7 @@ ul.nav {
     overflow: hidden;
     background: #2e2e2e;
     display: block;
+    top: 80px;
 }
 
 .nav li a {

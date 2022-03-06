@@ -41,6 +41,6 @@ export default {
 
 <style>
 .content {
-    margin: 15px 15px 15px 215px;
+    margin: 95px 15px 15px 215px;
 }
 </style>

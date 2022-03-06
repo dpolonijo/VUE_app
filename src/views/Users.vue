@@ -136,7 +136,10 @@ export default {
 }
 
 .loader-wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    margin-right: 120px;
+    margin-right: 70px;
 }
 </style>

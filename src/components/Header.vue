@@ -95,6 +95,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .username {
@@ -107,6 +110,7 @@ header {
     font-weight: bold;
     padding: 0 15px;
     height: 55px;
+    margin-right: 33px;
 }
 
 .log-out {
@@ -121,8 +125,8 @@ header {
     background: #f9b97f;
 }
 
-.swall2-popup {
-    background: #1c1c1c;
+.swal2-popup {
+    margin-left: 120px;
 }
 
 .swal2-popup .swal2-styled:focus {
