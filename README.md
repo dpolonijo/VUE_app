@@ -38,7 +38,7 @@ vue-sweetalert2: 5.0.2
 - U slučaju da postoji više korisnika sa .net domenom, prijava sljedećeg je moguća tek kada se prvi odjavi. 
 - Za proces prijave i odjave korisnika korišten je local storage. Ti podaci koriste se za prikaz korisničkih podataka na About me stranici (čime se izbježe čekanje ponovnog dohvata podataka koje traje 10 sekundi), te za prikaz korisničkog imena trenutno prijavljenog korisnika.
 - Korisniku je u svakom trenutku vizualno naglašeno na kojoj se stranici nalazi, te koji je korisnik trenutno prijavljen, ili nije.
-- U slučaju da prijavljeni korisnik osvježi web stranicu, zatvori tab ili ugasi web preklednik, ostat će i dalje prijavljen sve dok se eksplicitno ne odjavi putem linka za odjavu.
+- U slučaju da prijavljeni korisnik osvježi web stranicu, zatvori tab ili ugasi web preglednik, ostat će i dalje prijavljen sve dok se eksplicitno ne odjavi putem linka za odjavu.
 - Klikom ikone za odjavu, te nakon potvrde konfirmacijskog dialoga, korisnik se odjavljuje i aplikacija se vraća u inicijalno stanje.
 
 Nije korišten nikakav dodatni UI library, te je izrađen osnovni responsive dizajn.
