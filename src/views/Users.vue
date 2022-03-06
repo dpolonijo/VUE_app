@@ -44,6 +44,7 @@ export default {
     mounted() {
         this.getUsers();
     },
+    emits: ['loginEvent'],
     methods: {
         getUsers() {
             axios
@@ -72,7 +73,10 @@ export default {
                     'user',
                     JSON.stringify(this.loggedUserData)
                 );
+                // Pass information about successfully login to header component
+                this.$emit('loginEvent', true);
             } else {
+                // Not .net domain
                 this.isUserPrivileged = false;
             }
 
@@ -111,8 +115,10 @@ export default {
 
 .user-tbl thead th {
     font-size: 14px;
-    background: #2e2e2e;
-    color: #ccc;
+    /* background: #2e2e2e;
+    color: #ccc; */
+    background: #d6cdcb;
+    color: #584539;
 }
 
 .user-tbl tbody tr:nth-child(even) {

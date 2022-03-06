@@ -86,6 +86,7 @@ export default {
     mounted() {
         this.getUserDetails();
     },
+    emits: ['loginEvent'],
     methods: {
         getUserDetails() {
             this.user = JSON.parse(localStorage.getItem('user'));

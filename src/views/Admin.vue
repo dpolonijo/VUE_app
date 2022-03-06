@@ -18,6 +18,7 @@ export default {
     mounted() {
         this.getAdminData();
     },
+    emits: ['loginEvent'],
     methods: {
         getAdminData() {
             axios

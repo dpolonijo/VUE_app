@@ -1,8 +1,8 @@
 <template>
-    <Header />
+    <Header :isLoggedIn="isLoggedIn" />
     <NavSidebar />
     <div class="content">
-        <router-view></router-view>
+        <router-view @loginEvent="updateLoginState"></router-view>
     </div>
 </template>
 
@@ -17,6 +17,17 @@ export default {
     components: {
         Header,
         NavSidebar,
+    },
+    data() {
+        return {
+            isLoggedIn: false,
+        };
+    },
+    methods: {
+        updateLoginState(loginState) {
+            this.isLoggedIn = loginState;
+            console.log('xxx - ', this.isLoggedIn);
+        },
     },
 };
 </script>
