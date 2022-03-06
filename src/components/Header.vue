@@ -3,7 +3,7 @@
         <img src=".././assets/img/sartura_logo.svg" alt="sartura_logo" />
         <div class="username">
             {{ this.username }}
-            <div v-if="loggedInBtn" class="log-out" @click="logOut">
+            <div v-if="loginState" class="log-out" @click="logOut">
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             username: 'Unknow user',
-            loggedInBtn: false,
+            loginState: false,
         };
     },
     created() {
@@ -35,7 +35,7 @@ export default {
             // console.log('ls - ', userLS);
             if (userLS) {
                 this.username = userLS.name;
-                this.loggedInBtn = true;
+                this.loginState = true;
             }
         },
         logOut() {
@@ -50,7 +50,7 @@ export default {
                 if (result.isConfirmed) {
                     localStorage.clear();
                     this.username = 'Unknow user';
-                    this.loggedInBtn = false;
+                    this.loginState = false;
                     this.$parent.$data.isLoggedIn = false;
                     router.push({ path: '/' });
                 }
@@ -66,11 +66,12 @@ export default {
                 this.logIn();
             }
         },
+
         // Restrict route if user not logged in
         $route(to) {
             if (
                 (to.name === 'About' || to.name === 'Admin') &&
-                !this.isLoggedIn
+                !this.loginState
             ) {
                 // Redirect
                 router.replace('/');
