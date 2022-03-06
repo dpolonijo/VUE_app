@@ -1,14 +1,28 @@
 <template>
     <ul class="nav">
         <li><router-link to="/users">Users</router-link></li>
-        <li><router-link to="/about">About me</router-link></li>
-        <li><router-link to="/admin">Admin only</router-link></li>
+        <li v-if="loginStatus">
+            <router-link to="/about">About me</router-link>
+        </li>
+        <li v-else><a href="#" class="disabled">About me</a></li>
+        <li v-if="loginStatus">
+            <router-link to="/admin">Admin only</router-link>
+        </li>
+        <li v-else><a href="#" class="disabled">Admin only</a></li>
     </ul>
 </template>
 
 <script>
 export default {
     name: 'NavSidebar',
+    props: {
+        loginStatus: Boolean,
+    },
+    watch: {
+        loginStatus(newVal) {
+            // console.log('Navbar login - ', newVal);
+        },
+    },
 };
 </script>
 
@@ -43,5 +57,11 @@ ul.nav {
 .nav .active-link {
     background: #ccc !important;
     color: #686868 !important;
+}
+
+.nav li a.disabled {
+    background: #2e2e2e;
+    color: #ccc;
+    cursor: not-allowed;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-    <Header :isLoggedIn="isLoggedIn" />
-    <NavSidebar />
+    <Header :isLoggedIn="isLoggedIn" @loginState="loginState" />
+    <NavSidebar :loginStatus="loginStatus" />
     <div class="content">
-        <router-view @loginEvent="updateLoginState"></router-view>
+        <router-view @loginEvent="loginEvent"></router-view>
     </div>
 </template>
 
@@ -21,12 +21,17 @@ export default {
     data() {
         return {
             isLoggedIn: false,
+            loginStatus: false,
         };
     },
     methods: {
-        updateLoginState(loginState) {
+        loginEvent(loginState) {
             this.isLoggedIn = loginState;
-            console.log('xxx - ', this.isLoggedIn);
+            // console.log('xxx - ', this.isLoggedIn);
+        },
+        loginState(state) {
+            this.loginStatus = state;
+            // console.log('App state - ', state);
         },
     },
 };

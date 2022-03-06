@@ -33,7 +33,7 @@ export default {
         // Initial page load or page refresh
         logIn() {
             let userLS = JSON.parse(localStorage.getItem('user'));
-            console.log('ls - ', userLS);
+            // console.log('ls - ', userLS);
             if (userLS) {
                 this.username = userLS.name;
                 this.loggedInBtn = true;
@@ -61,8 +61,8 @@ export default {
     watch: {
         // Update username of just logged user
         isLoggedIn(newVal, oldVal) {
-            console.log('new - ', newVal);
-            console.log('old - ', oldVal);
+            // console.log('new - ', newVal);
+            this.$emit('loginState', newVal);
             if (newVal) {
                 this.logIn();
             }
